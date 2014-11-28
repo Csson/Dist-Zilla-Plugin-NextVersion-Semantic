@@ -256,7 +256,7 @@ use List::AllUtils qw/ first_index any /;
         my $previous = $self->previous_version;
 
         # initial version is special
-        unless ( $previous eq '0' ) {
+        unless ( $previous eq '0' || $previous eq '0.0.0' ) {
             my $regex = quotemeta $self->format;
             $regex =~ s/\\%0(\d+)d/(\\d{$1})/g;
             $regex =~ s/\\%(\d+)d/(\\d{1,$1})/g;
